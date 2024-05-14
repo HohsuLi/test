@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView resultTextView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -47,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
             InputStream fileStream = contentResolver.openInputStream(evilURL);
             Scanner scanner = new Scanner(fileStream).useDelimiter("\\A");
             String result = scanner.hasNext() ? scanner.next() : "";
-            resultTextView.setText( result);
+            resultTextView.setText("The content: " + result);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
 
